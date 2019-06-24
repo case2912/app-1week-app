@@ -9,6 +9,10 @@ class RoomViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
+
+    @IBOutlet weak var myButton: UIButton!
+
+
     var roomID: String?
     private var viewModel: RoomViewModel!
     private let disposeBag = DisposeBag()
@@ -26,11 +30,16 @@ class RoomViewController: UIViewController {
             print("submit")
             self.viewModel.sendMessage()
             self.textField.text = ""
+            self.viewModel.message = ""
         }).disposed(by: disposeBag)
         textField.rx.text.orEmpty.asObservable().subscribe({ event in
             print("text field changed")
             guard let message = event.element else { return }
             self.viewModel.message = message
+        }).disposed(by: disposeBag)
+        myButton.rx.tap.subscribe({ _ in
+            print("tap my button")
+
         }).disposed(by: disposeBag)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)

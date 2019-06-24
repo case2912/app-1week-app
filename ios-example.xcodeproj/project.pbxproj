@@ -86,6 +86,7 @@
 		53A7484422B9FE7600B737B8 /* ios-example */ = {
 			isa = PBXGroup;
 			children = (
+				53B0454922C09F13003420C5 /* Extension */,
 				53B0454622C07107003420C5 /* Model */,
 				53B0453D22C06A96003420C5 /* Root */,
 				53A7487722BC783A00B737B8 /* CustomTableViewCell */,
@@ -163,6 +164,13 @@
 				53B0454722C07116003420C5 /* Message.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		53B0454922C09F13003420C5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

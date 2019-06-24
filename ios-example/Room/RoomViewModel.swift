@@ -14,6 +14,9 @@ final class RoomViewModel {
         socket.disconnect()
     }
     func sendMessage() {
+        if message == "" {
+            return
+        }
         do {
             let data = try JSONSerialization.data(
                 withJSONObject: ["message": self.message],
