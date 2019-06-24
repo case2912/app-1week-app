@@ -3,7 +3,6 @@ import UIKit
 @IBDesignable
 class CTLabel: UILabel {
     override func draw(_ rect: CGRect) {
-        print(rect)
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.saveGState()
         defer {
@@ -26,7 +25,6 @@ class CTLabel: UILabel {
             astr = NSAttributedString(string: self.text ?? "", attributes: stringAttrs)
             fontSize += 1
         }
-        print(astr.size().height)
         let frameSetter = CTFramesetterCreateWithAttributedString(astr)
         let newRect = CGRect(x: 2 * rect.origin.x, y: 2 * rect.origin.y, width: rect.width, height: rect.height)
         let path = CGPath(rect: newRect, transform: nil)
