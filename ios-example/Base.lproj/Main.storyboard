@@ -220,6 +220,7 @@
                     <connections>
                         <outlet property="collectionView" destination="cUF-oe-eLC" id="CcC-Sx-WeV"/>
                         <outlet property="stackView" destination="VWC-Tg-sjw" id="H20-UB-QDa"/>
+                        <outlet property="submitButton" destination="MZh-DR-LXW" id="qCY-i3-r57"/>
                         <outlet property="tableView" destination="h32-n3-UDM" id="WTT-c9-5ic"/>
                         <outlet property="textField" destination="Lu1-Sg-KGU" id="J8e-BT-zkW"/>
                     </connections>

@@ -2,17 +2,41 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import Starscream
 class RoomViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
+    var roomID: String?
+    private var viewModel: RoomViewModel!
+    private let disposeBag = DisposeBag()
     override func viewDidLoad() {
+        guard let url = URL(string: "ws://127.0.0.1:8080/room?id=\(roomID!)") else {
+            return
+        }
+        let socket = WebSocket(url: url)
+        socket.delegate = self
+        viewModel = RoomViewModel(socket)
+        viewModel.connect()
         tableView.backgroundColor = .clear
-        tableView.scrollToRow(at: IndexPath(row: 99, section: 0), at: .bottom, animated: true)
+
+        submitButton.rx.tap.subscribe({ _ in
+            print("submit")
+            self.viewModel.sendMessage()
+            self.textField.text = ""
+        }).disposed(by: disposeBag)
+        textField.rx.text.orEmpty.asObservable().subscribe({ event in
+            print("text field changed")
+            guard let message = event.element else { return }
+            self.viewModel.message = message
+        }).disposed(by: disposeBag)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        viewModel.disconnect()
     }
     @objc func keyboardWillShow(_ notification: Notification?) {
         guard let keyboardFrame = (notification?.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
@@ -59,12 +83,13 @@ extension RoomViewController: UICollectionViewDelegateFlowLayout {
 
 extension RoomViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return viewModel.messages.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         cell.backgroundColor = .clear
+        cell.textLabel?.text = (viewModel.messages[indexPath.row] as Messsage).message
         return cell
     }
 }
@@ -72,5 +97,29 @@ extension RoomViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+}
+
+extension RoomViewController: WebSocketDelegate {
+    func websocketDidConnect(socket: WebSocketClient) {
+        print("didConnect")
+    }
+
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+        print("didDisconnect")
+    }
+
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("didReceiveMessage")
+        guard let data = text.data(using: .utf8)else { return }
+        guard let json = try? JSONDecoder().decode(Messsage.self, from: data) else { return }
+        viewModel.messages += [json]
+        print(viewModel.messages)
+        tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(row: viewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
+    }
+
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+        print("didReceiveData")
     }
 }
