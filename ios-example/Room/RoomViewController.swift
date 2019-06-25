@@ -17,6 +17,8 @@ class RoomViewController: UIViewController {
     private var viewModel: RoomViewModel!
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)
+        collectionView.backgroundColor = .clear
         guard let url = URL(string: "ws://127.0.0.1:8080/room?id=\(roomID!)") else {
             return
         }
@@ -86,7 +88,7 @@ extension RoomViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension RoomViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: view.frame.width / 7, height: collectionView.frame.height)
+        return CGSize(width: view.frame.width / 8, height: collectionView.frame.height)
     }
 }
 
@@ -99,6 +101,9 @@ extension RoomViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         cell.backgroundColor = .clear
         cell.textLabel?.text = (viewModel.messages[indexPath.row] as Messsage).message
+        guard let image = cell.imageView else { return cell }
+        image.clipsToBounds = true
+        image.layer.cornerRadius = image.frame.height / 2
         return cell
     }
 }

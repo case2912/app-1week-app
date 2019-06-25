@@ -10,6 +10,8 @@ class RoomListViewController: UIViewController {
     private let viewModel = RoomListViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)
+        tableView.backgroundColor = .clear
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
         tableView.refreshControl = refreshControl
         button.rx.tap
@@ -44,8 +46,7 @@ extension RoomListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath)
-        tableView.backgroundColor = .clear
-        cell.textLabel?.text = viewModel.rooms[indexPath.row]
+//        cell.textLabel?.text = viewModel.rooms[indexPath.row]
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {

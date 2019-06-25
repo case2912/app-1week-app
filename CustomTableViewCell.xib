@@ -19,35 +19,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBR-aR-P0P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROOM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozk-2p-0GE">
-                                <rect key="frame" x="134.5" y="64.5" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Ozk-2p-0GE" firstAttribute="centerY" secondItem="oBR-aR-P0P" secondAttribute="centerY" id="51i-ix-y7b"/>
-                            <constraint firstItem="Ozk-2p-0GE" firstAttribute="centerX" secondItem="oBR-aR-P0P" secondAttribute="centerX" id="usQ-cW-InU"/>
-                        </constraints>
-                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="LNZ-n0-Ydi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="oBR-aR-P0P" secondAttribute="trailing" id="FmO-eg-VtD"/>
-                    <constraint firstItem="oBR-aR-P0P" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ku1-jZ-Qqc"/>
-                    <constraint firstAttribute="bottom" secondItem="oBR-aR-P0P" secondAttribute="bottom" id="UI6-Gc-i6M"/>
-                    <constraint firstItem="oBR-aR-P0P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Yeq-LF-zWm"/>
+                    <constraint firstAttribute="bottom" secondItem="LNZ-n0-Ydi" secondAttribute="bottom" id="Lbs-OE-wB3"/>
+                    <constraint firstAttribute="trailing" secondItem="LNZ-n0-Ydi" secondAttribute="trailing" id="OjS-55-Doa"/>
+                    <constraint firstItem="LNZ-n0-Ydi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SqX-8x-tuX"/>
+                    <constraint firstItem="LNZ-n0-Ydi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ohZ-f7-mJN"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="cellView" destination="oBR-aR-P0P" id="7if-7E-ZkE"/>
-            </connections>
-            <point key="canvasLocation" x="47.826086956521742" y="70.3125"/>
+            <point key="canvasLocation" x="-304.34782608695656" y="-135.26785714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="square" width="500" height="500"/>
+    </resources>
 </document>
