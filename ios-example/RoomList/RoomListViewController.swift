@@ -8,6 +8,9 @@ class RoomListViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     private let disposeBag = DisposeBag()
     private let viewModel = RoomListViewModel()
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)

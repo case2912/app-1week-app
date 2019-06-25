@@ -17,6 +17,7 @@ class RoomViewController: UIViewController {
     private var viewModel: RoomViewModel!
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)
         collectionView.backgroundColor = .clear
         guard let url = URL(string: "ws://127.0.0.1:8080/room?id=\(roomID!)") else {

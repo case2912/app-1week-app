@@ -8,6 +8,9 @@ class RootViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var startButton: UIButton!
     private let disposeBag = DisposeBag()
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     override func viewDidLoad() {
         label.text = UIDevice.current.identifierForVendor?.uuidString
         view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)

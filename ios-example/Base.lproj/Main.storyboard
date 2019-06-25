@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これはふぉんとのてすと" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-TA-6rG">
-                                <rect key="frame" x="114" y="234" width="187" height="17"/>
+                                <rect key="frame" x="114" y="205" width="187" height="17"/>
                                 <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                             <constraint firstItem="Soj-F2-3mW" firstAttribute="centerX" secondItem="pPm-sv-Swk" secondAttribute="centerX" id="52D-pO-Z6J"/>
                             <constraint firstItem="sK1-TA-6rG" firstAttribute="centerX" secondItem="pPm-sv-Swk" secondAttribute="centerX" id="EPm-HN-DPR"/>
                             <constraint firstItem="Soj-F2-3mW" firstAttribute="centerY" secondItem="pPm-sv-Swk" secondAttribute="centerY" id="M5f-Yk-IAI"/>
-                            <constraint firstItem="sK1-TA-6rG" firstAttribute="centerY" secondItem="pPm-sv-Swk" secondAttribute="centerY" constant="-125.5" id="arF-ta-bRF"/>
+                            <constraint firstItem="sK1-TA-6rG" firstAttribute="centerY" secondItem="pPm-sv-Swk" secondAttribute="centerY" constant="-154.5" id="arF-ta-bRF"/>
                             <constraint firstItem="plA-fh-6x1" firstAttribute="top" secondItem="Soj-F2-3mW" secondAttribute="bottom" constant="77" id="p1y-c1-2GR"/>
                             <constraint firstItem="plA-fh-6x1" firstAttribute="centerX" secondItem="Soj-F2-3mW" secondAttribute="centerX" id="qeQ-Wj-dW7"/>
                             <constraint firstItem="plA-fh-6x1" firstAttribute="leading" secondItem="pPm-sv-Swk" secondAttribute="leadingMargin" id="wRu-9s-Wru"/>
@@ -239,20 +239,17 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="VWC-Tg-sjw" secondAttribute="height" multiplier="414:181" id="Qc6-Xp-nLh"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UcU-Od-8Ic" firstAttribute="bottom" secondItem="cUF-oe-eLC" secondAttribute="bottom" constant="209" id="8Da-8A-xRZ"/>
-                            <constraint firstItem="VWC-Tg-sjw" firstAttribute="leading" secondItem="UcU-Od-8Ic" secondAttribute="leading" id="DqM-ye-A1J"/>
-                            <constraint firstItem="VWC-Tg-sjw" firstAttribute="bottom" secondItem="UcU-Od-8Ic" secondAttribute="bottom" id="UDz-nC-TIN"/>
-                            <constraint firstItem="cUF-oe-eLC" firstAttribute="trailing" secondItem="UcU-Od-8Ic" secondAttribute="trailing" id="XVA-g4-pd7"/>
-                            <constraint firstItem="cUF-oe-eLC" firstAttribute="leading" secondItem="UcU-Od-8Ic" secondAttribute="leading" id="f38-Ad-rfd"/>
-                            <constraint firstItem="cUF-oe-eLC" firstAttribute="top" secondItem="UcU-Od-8Ic" secondAttribute="top" constant="16" id="x6A-pF-1WZ"/>
-                            <constraint firstItem="VWC-Tg-sjw" firstAttribute="trailing" secondItem="UcU-Od-8Ic" secondAttribute="trailing" id="ygk-CH-cet"/>
+                            <constraint firstItem="UcU-Od-8Ic" firstAttribute="bottom" secondItem="cUF-oe-eLC" secondAttribute="bottom" constant="209" id="5qK-6k-yJr"/>
+                            <constraint firstItem="cUF-oe-eLC" firstAttribute="trailing" secondItem="UcU-Od-8Ic" secondAttribute="trailing" id="CyZ-CA-sMi"/>
+                            <constraint firstItem="VWC-Tg-sjw" firstAttribute="bottom" secondItem="UcU-Od-8Ic" secondAttribute="bottom" id="HBT-mJ-f1x"/>
+                            <constraint firstItem="cUF-oe-eLC" firstAttribute="leading" secondItem="UcU-Od-8Ic" secondAttribute="leading" id="JKV-Za-vaB"/>
+                            <constraint firstItem="cUF-oe-eLC" firstAttribute="top" secondItem="UcU-Od-8Ic" secondAttribute="top" constant="16" id="PiS-pw-aUC"/>
+                            <constraint firstItem="VWC-Tg-sjw" firstAttribute="trailing" secondItem="UcU-Od-8Ic" secondAttribute="trailing" id="czf-0p-313"/>
+                            <constraint firstItem="VWC-Tg-sjw" firstAttribute="leading" secondItem="UcU-Od-8Ic" secondAttribute="leading" id="pd2-XM-iLI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UcU-Od-8Ic"/>
                     </view>
@@ -270,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="502.89855072463774" y="341.57608695652175"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="uks-EC-jrc">
             <objects>
-                <navigationController id="6Mg-iQ-sTp" sceneMemberID="viewController">
+                <navigationController id="6Mg-iQ-sTp" customClass="CustomNavigationController" customModule="ios_example" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rJM-tz-Eqq">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
