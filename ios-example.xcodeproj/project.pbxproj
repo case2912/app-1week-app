@@ -25,6 +25,7 @@
 		53B0454322C06D8E003420C5 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B0454222C06D8E003420C5 /* RoomViewModel.swift */; };
 		53B0454522C06F28003420C5 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B0454422C06F28003420C5 /* Starscream.framework */; };
 		53B0454822C07116003420C5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B0454722C07116003420C5 /* Message.swift */; };
+		53B0454E22C0CA8F003420C5 /* AoyagiSosekiFont2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53B0454C22C0CA69003420C5 /* AoyagiSosekiFont2.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		53B0454222C06D8E003420C5 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		53B0454422C06F28003420C5 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		53B0454722C07116003420C5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		53B0454C22C0CA69003420C5 /* AoyagiSosekiFont2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AoyagiSosekiFont2.otf; path = ../../../Desktop/AoyagiSosekiFont2.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				53A7486822BB1DF100B737B8 /* Room */,
 				53A7484522B9FE7600B737B8 /* AppDelegate.swift */,
 				53A7484922B9FE7600B737B8 /* Main.storyboard */,
+				53B0454C22C0CA69003420C5 /* AoyagiSosekiFont2.otf */,
 				53A7484C22B9FE7800B737B8 /* Assets.xcassets */,
 				53A7484E22B9FE7800B737B8 /* LaunchScreen.storyboard */,
 				53A7485122B9FE7800B737B8 /* Info.plist */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B0454E22C0CA8F003420C5 /* AoyagiSosekiFont2.otf in Resources */,
 				53A7485022B9FE7800B737B8 /* LaunchScreen.storyboard in Resources */,
 				53A7484D22B9FE7800B737B8 /* Assets.xcassets in Resources */,
 				53A7487622BC782C00B737B8 /* CustomTableViewCell.xib in Resources */,
