@@ -19,6 +19,7 @@ class RoomViewController: UIViewController {
     override func viewDidLoad() {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
         guard let url = URL(string: "ws://127.0.0.1:8080/room?id=\(roomID!)") else {
             return

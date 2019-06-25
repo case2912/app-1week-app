@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="LNZ-n0-Ydi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="LNZ-n0-Ydi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -35,6 +35,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="square" width="500" height="500"/>
+        <image name="frame" width="786" height="576"/>
     </resources>
 </document>

@@ -27,6 +27,7 @@
 		53B0454822C07116003420C5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B0454722C07116003420C5 /* Message.swift */; };
 		53B0454E22C0CA8F003420C5 /* AoyagiSosekiFont2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53B0454C22C0CA69003420C5 /* AoyagiSosekiFont2.otf */; };
 		53B471C122C1F52B00F8258E /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B471C022C1F52B00F8258E /* CustomNavigationController.swift */; };
+		53B471C922C2055300F8258E /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B471C822C2055300F8258E /* CustomUIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		53B0454722C07116003420C5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		53B0454C22C0CA69003420C5 /* AoyagiSosekiFont2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AoyagiSosekiFont2.otf; path = ../../../Desktop/AoyagiSosekiFont2.otf; sourceTree = "<group>"; };
 		53B471C022C1F52B00F8258E /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		53B471C822C2055300F8258E /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomUIButton.swift; path = ../CustomUIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		53A7484422B9FE7600B737B8 /* ios-example */ = {
 			isa = PBXGroup;
 			children = (
+				53B471C822C2055300F8258E /* CustomUIButton.swift */,
 				53B471C222C1F53300F8258E /* CustomNavigation */,
 				53B0454922C09F13003420C5 /* Extension */,
 				53B0454622C07107003420C5 /* Model */,
@@ -291,6 +294,7 @@
 				53B0454822C07116003420C5 /* Message.swift in Sources */,
 				53A7487122BB542D00B737B8 /* CTLabel.swift in Sources */,
 				53A7484622B9FE7600B737B8 /* AppDelegate.swift in Sources */,
+				53B471C922C2055300F8258E /* CustomUIButton.swift in Sources */,
 				53B471C122C1F52B00F8258E /* CustomNavigationController.swift in Sources */,
 				53B0454122C06D4D003420C5 /* RoomListViewModel.swift in Sources */,
 				53A7486722BB1DAB00B737B8 /* RoomViewController.swift in Sources */,
