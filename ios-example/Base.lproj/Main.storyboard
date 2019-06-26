@@ -247,7 +247,7 @@
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="This is test comment text. Hi!!!!!!!!! I'm a developer. how can" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vhi-gM-mAa">
                                                             <rect key="frame" x="79" y="0.0" width="315" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -334,13 +334,65 @@
                     <view key="view" contentMode="scaleToFill" id="THW-SV-dCq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDa-YI-Kld">
+                                <rect key="frame" x="20" y="84" width="374" height="632"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="さしすせそそそ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-Ms-Ydm" customClass="CTLabel" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="144" y="8" width="87" height="468"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="かきくけこ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08j-sM-ltR" customClass="CTLabel" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="239" y="8" width="87" height="468"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="たちつてと" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxF-qF-Fx2" customClass="CTLabel" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="49" y="8" width="87" height="468"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YS-Pt-CKd" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="208" y="594" width="75" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="詠む"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-vV-wp6" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="102" y="594" width="75" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="戻る"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="RDa-YI-Kld" firstAttribute="top" secondItem="dkZ-Mk-fWU" secondAttribute="top" constant="64" id="1RX-Qn-jHA"/>
+                            <constraint firstItem="dkZ-Mk-fWU" firstAttribute="bottom" secondItem="RDa-YI-Kld" secondAttribute="bottom" constant="20" id="hLR-5M-i7H"/>
+                            <constraint firstItem="RDa-YI-Kld" firstAttribute="leading" secondItem="dkZ-Mk-fWU" secondAttribute="leading" constant="20" id="s9b-W2-gxn"/>
+                            <constraint firstItem="dkZ-Mk-fWU" firstAttribute="trailing" secondItem="RDa-YI-Kld" secondAttribute="trailing" constant="20" id="xEz-Ld-GZ2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dkZ-Mk-fWU"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="iS1-vV-wp6" id="uG2-6L-ccx"/>
+                        <outlet property="submitButton" destination="7YS-Pt-CKd" id="Xqu-Zb-5ua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yo-Zj-iDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1267" y="342"/>
+            <point key="canvasLocation" x="1266.6666666666667" y="341.57608695652175"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="uks-EC-jrc">

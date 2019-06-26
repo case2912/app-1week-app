@@ -34,12 +34,11 @@ class RoomViewController: UIViewController {
             print("submit")
             self.viewModel.sendMessage()
             self.textField.text = ""
-            self.viewModel.message = ""
         }).disposed(by: disposeBag)
         textField.rx.text.orEmpty.asObservable().subscribe({ event in
             print("text field changed")
             guard let message = event.element else { return }
-            self.viewModel.message = message
+            self.viewModel.message.message = message
         }).disposed(by: disposeBag)
         myButton.rx.tap.subscribe({ _ in
             print("tap my button")
@@ -90,7 +89,6 @@ extension RoomViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension RoomViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         return CGSize(width: view.frame.width / 8, height: collectionView.frame.height)
     }
 }
@@ -103,7 +101,7 @@ extension RoomViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         cell.backgroundColor = .clear
-        cell.textLabel?.text = (viewModel.messages[indexPath.row] as Messsage).message
+        cell.textLabel?.text = (viewModel.messages[indexPath.row] as Message).message
         guard let image = cell.imageView else { return cell }
         image.clipsToBounds = true
         image.layer.cornerRadius = image.frame.height / 2
@@ -128,9 +126,15 @@ extension RoomViewController: WebSocketDelegate {
 
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("didReceiveMessage")
+        print(text)
         guard let data = text.data(using: .utf8)else { return }
-        guard let json = try? JSONDecoder().decode(Messsage.self, from: data) else { return }
-        viewModel.messages += [json]
+        print(data)
+        do {
+            let json = try JSONDecoder().decode(Message.self, from: data)
+            viewModel.messages += [json]
+        } catch let error {
+            print(error)
+        }
         print(viewModel.messages)
         tableView.reloadData()
         tableView.scrollToRow(at: IndexPath(row: viewModel.messages.count - 1, section: 0), at: .bottom, animated: true)

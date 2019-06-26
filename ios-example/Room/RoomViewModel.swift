@@ -1,12 +1,13 @@
 import Foundation
 import Starscream
+
 final class RoomViewModel {
-    var message: String?
+    var message = Message(message: "", messageType: MessageType.Comment.rawValue,from: "clientID")
     var socket: WebSocket
     init(_ socket: WebSocket) {
         self.socket = socket
     }
-    var messages: [Messsage] = []
+    var messages: [Message] = []
     func connect() {
         socket.connect()
     }
@@ -14,18 +15,17 @@ final class RoomViewModel {
         socket.disconnect()
     }
     func sendMessage() {
-        if message == "" {
+        if message.message == "" {
             return
         }
         do {
-            let data = try JSONSerialization.data(
-                withJSONObject: ["message": self.message],
-                options: []
-            )
+            let data = try JSONEncoder().encode(message)
+            print(data)
             socket.write(data: data)
         } catch let error {
             print(error)
         }
+        message.message = ""
     }
 }
 
