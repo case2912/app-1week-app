@@ -10,6 +10,15 @@ class RootViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
     override func viewWillAppear(_ animated: Bool) {
+        let backButton = UIBarButtonItem(title: "戻る", style: .done, target: self, action: nil)
+        backButton.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
+            ], for: .normal)
+        backButton.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
+            ], for: .highlighted)
+        navigationItem.backBarButtonItem = backButton
+
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     override func viewDidLoad() {

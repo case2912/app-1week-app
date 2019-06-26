@@ -9,12 +9,20 @@ class RoomListViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let viewModel = RoomListViewModel()
     override func viewWillAppear(_ animated: Bool) {
+        let backButton = UIBarButtonItem(title: "戻る", style: .done, target: self, action: nil)
+        backButton.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
+            ], for: .normal)
+        backButton.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
+            ], for: .highlighted)
+        navigationItem.backBarButtonItem = backButton
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.2)
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
         tableView.refreshControl = refreshControl
 
@@ -53,21 +61,13 @@ extension RoomListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath)
-        cell.textLabel?.text = viewModel.rooms[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        cell.roomInfo = viewModel.rooms[indexPath.row]
+        cell.parentViewController = self
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        guard let roomViewController = self.storyboard!.instantiateViewController(withIdentifier: "RoomViewController") as? RoomViewController else {
-            return
-        }
-        roomViewController.roomID = viewModel.rooms[indexPath.row]
-        navigationController?.pushViewController(roomViewController, animated: true)
     }
 }
 

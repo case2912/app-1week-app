@@ -2,12 +2,13 @@ import Foundation
 import Starscream
 
 final class RoomViewModel {
-    var message = Message(message: "", messageType: MessageType.Comment.rawValue,from: "clientID")
+    var message = Message(message: "", messageType: MessageType.Comment.rawValue, from: "clientID")
     var socket: WebSocket
     init(_ socket: WebSocket) {
         self.socket = socket
     }
     var messages: [Message] = []
+    var renga: [Message] = []
     func connect() {
         socket.connect()
     }

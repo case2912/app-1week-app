@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5347A7A222C30FB500EA0115 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347A7A122C30FB500EA0115 /* ModalViewController.swift */; };
+		5347A7AC22C3563900EA0115 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347A7AA22C3563900EA0115 /* CustomCollectionViewCell.swift */; };
+		5347A7AD22C3563900EA0115 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5347A7AB22C3563900EA0115 /* CustomCollectionViewCell.xib */; };
 		53A7484622B9FE7600B737B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7484522B9FE7600B737B8 /* AppDelegate.swift */; };
 		53A7484822B9FE7600B737B8 /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7484722B9FE7600B737B8 /* RoomListViewController.swift */; };
 		53A7484B22B9FE7600B737B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A7484922B9FE7600B737B8 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		5347A7A122C30FB500EA0115 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		5347A7AA22C3563900EA0115 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		5347A7AB22C3563900EA0115 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		53A7484222B9FE7600B737B8 /* ios-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A7484522B9FE7600B737B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53A7484722B9FE7600B737B8 /* RoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +60,7 @@
 		53B0454722C07116003420C5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		53B0454C22C0CA69003420C5 /* AoyagiSosekiFont2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AoyagiSosekiFont2.otf; path = ../../../Desktop/AoyagiSosekiFont2.otf; sourceTree = "<group>"; };
 		53B471C022C1F52B00F8258E /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
-		53B471C822C2055300F8258E /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomUIButton.swift; path = ../CustomUIButton.swift; sourceTree = "<group>"; };
+		53B471C822C2055300F8258E /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		53B471CE22C3035F00F8258E /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,24 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		5347A7A422C3384A00EA0115 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				53B471C822C2055300F8258E /* CustomUIButton.swift */,
+				53B471CE22C3035F00F8258E /* CustomUIView.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		5347A7AE22C3563E00EA0115 /* CustomCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5347A7AB22C3563900EA0115 /* CustomCollectionViewCell.xib */,
+				5347A7AA22C3563900EA0115 /* CustomCollectionViewCell.swift */,
+			);
+			path = CustomCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		53A7483922B9FE7600B737B8 = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +126,9 @@
 		53A7484422B9FE7600B737B8 /* ios-example */ = {
 			isa = PBXGroup;
 			children = (
+				5347A7AE22C3563E00EA0115 /* CustomCollectionViewCell */,
+				5347A7A422C3384A00EA0115 /* CustomUI */,
 				5347A7A322C30FC700EA0115 /* Modal */,
-				53B471C822C2055300F8258E /* CustomUIButton.swift */,
-				53B471CE22C3035F00F8258E /* CustomUIView.swift */,
 				53B471C222C1F53300F8258E /* CustomNavigation */,
 				53B0454922C09F13003420C5 /* Extension */,
 				53B0454622C07107003420C5 /* Model */,
@@ -264,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53B0454E22C0CA8F003420C5 /* AoyagiSosekiFont2.otf in Resources */,
+				5347A7AD22C3563900EA0115 /* CustomCollectionViewCell.xib in Resources */,
 				53A7485022B9FE7800B737B8 /* LaunchScreen.storyboard in Resources */,
 				53A7484D22B9FE7800B737B8 /* Assets.xcassets in Resources */,
 				53A7487622BC782C00B737B8 /* CustomTableViewCell.xib in Resources */,
@@ -303,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53A7484822B9FE7600B737B8 /* RoomListViewController.swift in Sources */,
+				5347A7AC22C3563900EA0115 /* CustomCollectionViewCell.swift in Sources */,
 				53B471CF22C3035F00F8258E /* CustomUIView.swift in Sources */,
 				53A7487522BC782C00B737B8 /* CustomTableViewCell.swift in Sources */,
 				53B0453F22C06AA6003420C5 /* RootViewController.swift in Sources */,

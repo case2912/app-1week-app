@@ -16,11 +16,22 @@ class RoomViewController: UIViewController {
     var roomID: String?
     private var viewModel: RoomViewModel!
     private let disposeBag = DisposeBag()
+    override func viewWillAppear(_ animated: Bool) {
+        let backButton = UIBarButtonItem(title: "戻る", style: .done, target: self, action: nil)
+        backButton.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
+            ], for: .normal)
+        backButton.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
+            ], for: .highlighted)
+        navigationItem.backBarButtonItem = backButton
+    }
     override func viewDidLoad() {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
+        collectionView.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CustomCollectionViewCell")
         guard let url = URL(string: "ws://127.0.0.1:8080/room?id=\(roomID!)") else {
             return
         }
@@ -32,6 +43,7 @@ class RoomViewController: UIViewController {
 
         submitButton.rx.tap.subscribe({ _ in
             print("submit")
+            self.viewModel.message.messageType = MessageType.Comment.rawValue
             self.viewModel.sendMessage()
             self.textField.text = ""
         }).disposed(by: disposeBag)
@@ -42,7 +54,8 @@ class RoomViewController: UIViewController {
         }).disposed(by: disposeBag)
         myButton.rx.tap.subscribe({ _ in
             print("tap my button")
-            guard let modalViewController = self.storyboard?.instantiateViewController(withIdentifier: "ModalViewController") else { return }
+            guard let modalViewController = self.storyboard?.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController else { return }
+            modalViewController.roomViewModel = self.viewModel
             self.present(modalViewController, animated: true, completion: nil)
         }).disposed(by: disposeBag)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -78,11 +91,12 @@ class RoomViewController: UIViewController {
 
 extension RoomViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return viewModel.renga.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
+        cell.label.text = (viewModel.renga[indexPath.row]).message
         return cell
     }
 }
@@ -128,16 +142,21 @@ extension RoomViewController: WebSocketDelegate {
         print("didReceiveMessage")
         print(text)
         guard let data = text.data(using: .utf8)else { return }
-        print(data)
         do {
             let json = try JSONDecoder().decode(Message.self, from: data)
-            viewModel.messages += [json]
+            switch json.messageType {
+            case MessageType.Comment.rawValue:
+                viewModel.messages += [json]
+                tableView.reloadData()
+                tableView.scrollToRow(at: IndexPath(row: viewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
+            case MessageType.Haiku.rawValue:
+                viewModel.renga += [json]
+                collectionView.reloadData()
+            default: break
+            }
         } catch let error {
             print(error)
         }
-        print(viewModel.messages)
-        tableView.reloadData()
-        tableView.scrollToRow(at: IndexPath(row: viewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
     }
 
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {

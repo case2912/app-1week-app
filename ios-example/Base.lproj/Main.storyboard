@@ -23,77 +23,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="連歌を詠みます！！！！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-TA-6rG">
-                                <rect key="frame" x="31" y="222" width="352" height="32"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1Q-Qd-jQq" customClass="CustomUIView" customModule="ios_example" customModuleProvider="target">
+                                <rect key="frame" x="28" y="548" width="352" height="101"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ramdom_user" translatesAutoresizingMaskIntoConstraints="NO" id="Aas-dv-9ib">
+                                        <rect key="frame" x="8" y="8" width="85" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Aas-dv-9ib" secondAttribute="height" multiplier="1:1" id="PG2-4Z-G2S"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phillip Cruz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReJ-bs-oMh">
+                                        <rect key="frame" x="101" y="36.666666666666629" width="243" height="28"/>
+                                        <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="R9q-cY-cxw"/>
-                                    <constraint firstAttribute="width" constant="352" id="s2a-qO-Nu8"/>
+                                    <constraint firstItem="ReJ-bs-oMh" firstAttribute="centerY" secondItem="t1Q-Qd-jQq" secondAttribute="centerY" id="0Ty-1U-VkU"/>
+                                    <constraint firstItem="Aas-dv-9ib" firstAttribute="leading" secondItem="t1Q-Qd-jQq" secondAttribute="leading" constant="8" id="Bw7-N0-SCO"/>
+                                    <constraint firstAttribute="trailing" secondItem="ReJ-bs-oMh" secondAttribute="trailing" constant="8" id="CCD-jD-8Gr"/>
+                                    <constraint firstItem="ReJ-bs-oMh" firstAttribute="leading" secondItem="Aas-dv-9ib" secondAttribute="trailing" constant="8" id="Osh-Pt-xo5"/>
+                                    <constraint firstAttribute="width" secondItem="t1Q-Qd-jQq" secondAttribute="height" multiplier="352:101" id="Q6Z-Bd-L0O"/>
+                                    <constraint firstAttribute="bottom" secondItem="Aas-dv-9ib" secondAttribute="bottom" constant="8" id="aoL-rQ-jqk"/>
+                                    <constraint firstItem="Aas-dv-9ib" firstAttribute="top" secondItem="t1Q-Qd-jQq" secondAttribute="top" constant="8" id="kNg-7p-yZf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="32"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="連歌オンライン" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-TA-6rG">
+                                <rect key="frame" x="77.666666666666686" y="349.66666666666669" width="259" height="37"/>
+                                <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="rwI-4e-avD">
-                                <rect key="frame" x="31" y="523" width="352" height="193"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="Vgr-jN-oXp">
+                                <rect key="frame" x="73" y="671" width="269" height="45"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1Q-Qd-jQq" customClass="CustomUIView" customModule="ios_example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="101"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ramdom_user" translatesAutoresizingMaskIntoConstraints="NO" id="Aas-dv-9ib">
-                                                <rect key="frame" x="8" y="8" width="85" height="85"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phillip Cruz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReJ-bs-oMh">
-                                                <rect key="frame" x="136" y="40" width="193" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="28"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soj-F2-3mW" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="45"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="101" id="AIs-jF-lq2"/>
-                                            <constraint firstAttribute="trailing" secondItem="Aas-dv-9ib" secondAttribute="trailing" constant="259" id="Cjt-j3-Anm"/>
-                                            <constraint firstAttribute="width" constant="352" id="XPa-nM-HOd"/>
-                                            <constraint firstItem="Aas-dv-9ib" firstAttribute="top" secondItem="t1Q-Qd-jQq" secondAttribute="top" constant="8" id="ZMe-m7-ulj"/>
-                                            <constraint firstAttribute="bottom" secondItem="Aas-dv-9ib" secondAttribute="bottom" constant="8" id="sYR-Kd-P4B"/>
-                                            <constraint firstItem="Aas-dv-9ib" firstAttribute="leading" secondItem="t1Q-Qd-jQq" secondAttribute="leading" constant="8" id="vXB-Cs-a6U"/>
+                                            <constraint firstAttribute="width" secondItem="Soj-F2-3mW" secondAttribute="height" multiplier="22:9" id="lsz-cQ-QVH"/>
                                         </constraints>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-iC-5pk">
-                                        <rect key="frame" x="47.666666666666686" y="148" width="257" height="45"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soj-F2-3mW" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="110" height="45"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="110" id="Oun-gb-oAz"/>
-                                                    <constraint firstAttribute="height" constant="45" id="SSZ-fc-grj"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="はじめる"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2j-f5-s8B" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
-                                                <rect key="frame" x="147" y="0.0" width="110" height="45"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="w6Y-yh-bOI"/>
-                                                    <constraint firstAttribute="width" constant="110" id="zl6-db-O9C"/>
-                                                </constraints>
-                                                <state key="normal" title="りれき"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="はじめる"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2j-f5-s8B" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="159" y="0.0" width="110" height="45"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="i2j-f5-s8B" secondAttribute="height" multiplier="22:9" id="wMJ-1z-Qya"/>
+                                        </constraints>
+                                        <state key="normal" title="りれき"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sK1-TA-6rG" firstAttribute="centerY" secondItem="pPm-sv-Swk" secondAttribute="centerY" constant="-130" id="17u-VS-XWf"/>
-                            <constraint firstItem="ouz-dE-saQ" firstAttribute="trailing" secondItem="rwI-4e-avD" secondAttribute="trailing" constant="31" id="5He-Sz-qwB"/>
-                            <constraint firstItem="sK1-TA-6rG" firstAttribute="centerX" secondItem="pPm-sv-Swk" secondAttribute="centerX" id="DdM-ri-neB"/>
-                            <constraint firstItem="ouz-dE-saQ" firstAttribute="bottom" secondItem="rwI-4e-avD" secondAttribute="bottom" constant="20" id="gtZ-Vo-BzQ"/>
-                            <constraint firstItem="rwI-4e-avD" firstAttribute="leading" secondItem="ouz-dE-saQ" secondAttribute="leading" constant="31" id="i6O-Mp-W2d"/>
+                            <constraint firstItem="sK1-TA-6rG" firstAttribute="centerY" secondItem="pPm-sv-Swk" secondAttribute="centerY" id="3nY-lk-EGF"/>
+                            <constraint firstItem="Vgr-jN-oXp" firstAttribute="leading" secondItem="ouz-dE-saQ" secondAttribute="leading" constant="73" id="VmJ-1E-J4V"/>
+                            <constraint firstItem="t1Q-Qd-jQq" firstAttribute="leading" secondItem="ouz-dE-saQ" secondAttribute="leading" constant="28" id="Zle-9I-Nlx"/>
+                            <constraint firstItem="ouz-dE-saQ" firstAttribute="trailing" secondItem="Vgr-jN-oXp" secondAttribute="trailing" constant="72" id="lf7-qJ-PMn"/>
+                            <constraint firstItem="ouz-dE-saQ" firstAttribute="bottom" secondItem="Vgr-jN-oXp" secondAttribute="bottom" constant="20" id="ny4-x7-okN"/>
+                            <constraint firstItem="Vgr-jN-oXp" firstAttribute="top" secondItem="t1Q-Qd-jQq" secondAttribute="bottom" constant="22" id="okr-4t-BB1"/>
+                            <constraint firstItem="sK1-TA-6rG" firstAttribute="centerX" secondItem="pPm-sv-Swk" secondAttribute="centerX" id="pCM-Ht-7H2"/>
+                            <constraint firstItem="ouz-dE-saQ" firstAttribute="trailing" secondItem="t1Q-Qd-jQq" secondAttribute="trailing" constant="34" id="vYB-Sk-UxP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ouz-dE-saQ"/>
                     </view>
@@ -128,10 +123,27 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82l-dJ-qvj" customClass="CustomUIView" customModule="ios_example" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FS-2Y-mFJ">
+                                                <rect key="frame" x="19" y="8" width="336" height="134"/>
+                                                <string key="text" base64-UTF8="YES">
+5YWo5Zu944Gu5L+z5Lq644Go6YCj5q2M44KS44Gv44GY44KB44G+44GZDeWPguWKoOOBl+OBn+OBhOmD
+qOWxi+OBq+OAjOWFpeWupOOAjeOBmeOCi+OBixHigKjjgIzpg6jlsYvjgpLjgaTjgY/jgovjgI3jgpLp
+gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
+</string>
+                                                <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="5FS-2Y-mFJ" secondAttribute="bottom" constant="8" id="9gP-6a-0vD"/>
                                             <constraint firstAttribute="width" constant="374" id="GuR-Qa-tCQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="5FS-2Y-mFJ" secondAttribute="trailing" constant="19" id="UCm-5T-VxA"/>
                                             <constraint firstAttribute="height" constant="150" id="WkR-M8-ehu"/>
+                                            <constraint firstItem="5FS-2Y-mFJ" firstAttribute="leading" secondItem="82l-dJ-qvj" secondAttribute="leading" constant="19" id="m81-k8-Yvf"/>
+                                            <constraint firstItem="5FS-2Y-mFJ" firstAttribute="top" secondItem="82l-dJ-qvj" secondAttribute="top" constant="8" id="uyN-4y-MOp"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jK8-Z8-88Z" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
@@ -187,40 +199,14 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cUF-oe-eLC">
                                 <rect key="frame" x="0.0" y="84" width="414" height="427"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T95-yE-ywH">
-                                    <size key="itemSize" width="149" height="194"/>
+                                    <size key="itemSize" width="160" height="232"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="ox9-1Z-w8M">
-                                        <rect key="frame" x="0.0" y="0.0" width="149" height="194"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="149" height="194"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あいうえおかきくけこさしすせそ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgA-XY-f4N" customClass="CTLabel" customModule="ios_example" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="194"/>
-                                                    <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="sgA-XY-f4N" firstAttribute="leading" secondItem="ox9-1Z-w8M" secondAttribute="leading" id="5D0-SQ-6Qv"/>
-                                            <constraint firstItem="sgA-XY-f4N" firstAttribute="leading" secondItem="ox9-1Z-w8M" secondAttribute="leading" id="Fyi-88-hYq"/>
-                                            <constraint firstAttribute="trailing" secondItem="sgA-XY-f4N" secondAttribute="trailing" id="N0w-Zj-fst"/>
-                                            <constraint firstAttribute="trailing" secondItem="sgA-XY-f4N" secondAttribute="trailing" id="XZK-t9-ELC"/>
-                                            <constraint firstAttribute="bottom" secondItem="sgA-XY-f4N" secondAttribute="bottom" id="pNI-4D-Wb7"/>
-                                            <constraint firstItem="sgA-XY-f4N" firstAttribute="top" secondItem="ox9-1Z-w8M" secondAttribute="top" id="rHz-eO-lnW"/>
-                                            <constraint firstItem="sgA-XY-f4N" firstAttribute="top" secondItem="ox9-1Z-w8M" secondAttribute="top" id="rs9-5c-KNs"/>
-                                            <constraint firstAttribute="bottom" secondItem="sgA-XY-f4N" secondAttribute="bottom" id="w5Z-24-9vg"/>
-                                        </constraints>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="vTy-GS-Kl1" id="NFG-M3-v5i"/>
                                     <outlet property="delegate" destination="vTy-GS-Kl1" id="Xn6-PA-11p"/>
