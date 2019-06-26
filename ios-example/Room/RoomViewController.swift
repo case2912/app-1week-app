@@ -43,7 +43,8 @@ class RoomViewController: UIViewController {
         }).disposed(by: disposeBag)
         myButton.rx.tap.subscribe({ _ in
             print("tap my button")
-
+            guard let modalViewController = self.storyboard?.instantiateViewController(withIdentifier: "ModalViewController") else { return }
+            self.present(modalViewController, animated: true, completion: nil)
         }).disposed(by: disposeBag)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
