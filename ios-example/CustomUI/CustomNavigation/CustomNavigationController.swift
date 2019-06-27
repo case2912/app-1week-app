@@ -4,11 +4,11 @@ class CustomNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.barTintColor = UIColor(patternImage: UIImage(named: "japanese-paper-red")!)
+        navigationBar.barTintColor = .primary
         navigationBar.backgroundColor = .black
         navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 18)!,
+            NSAttributedString.Key.font: UIFont(name: UIFont.aoyagiSosekiFontString, size: 18)!,
         ]
     }
 

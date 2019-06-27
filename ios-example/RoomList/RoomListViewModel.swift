@@ -24,8 +24,6 @@ final class RoomListViewModel {
             }
             DispatchQueue.main.async {
                 completion?(json.room_id)
-                print("present room view controller")
-                print(json)
             }
         }.resume()
     }
@@ -46,7 +44,6 @@ final class RoomListViewModel {
             self.rooms.removeAll()
             self.rooms += json.rooms
             DispatchQueue.main.async {
-                print("reload table")
                 completion?()
             }
         }.resume()

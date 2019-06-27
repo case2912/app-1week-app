@@ -11,18 +11,14 @@ class ModalViewController: UIViewController {
     var roomViewModel: RoomViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        textField.rx.text.orEmpty.asObservable().subscribe({ event in
-            print("text field changed")
+        textField.rx.text.orEmpty.asObservable().subscribe({ _ in
             self.textField.setNeedsDisplay()
         }).disposed(by: disposeBag)
         backButton.rx.tap.subscribe({ _ in
             self.dismiss(animated: true, completion: nil)
         }).disposed(by: disposeBag)
         submitButton.rx.tap.subscribe({ _ in
-            self.roomViewModel.message.messageType = MessageType.Haiku.rawValue
-            guard let text = self.textField.text else { return }
-            self.roomViewModel.message.message = text
+            self.roomViewModel.message = Message(message: self.textField.text ?? "", messageType: MessageType.Haiku.rawValue, from: "")
             self.roomViewModel.sendMessage()
             self.dismiss(animated: true, completion: nil)
         }).disposed(by: disposeBag)

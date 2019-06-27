@@ -2,49 +2,36 @@ import UIKit
 import RxSwift
 import RxCocoa
 class RoomListViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var button: UIButton!
     private let refreshControl = UIRefreshControl()
     private let disposeBag = DisposeBag()
     private let viewModel = RoomListViewModel()
     override func viewWillAppear(_ animated: Bool) {
-        let backButton = UIBarButtonItem(title: "戻る", style: .done, target: self, action: nil)
-        backButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
-            ], for: .normal)
-        backButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
-            ], for: .highlighted)
-        navigationItem.backBarButtonItem = backButton
+        super.viewWillAppear(animated)
+        navigationItem.setBackButtonItem()
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)
+        view.backgroundColor = .background
         tableView.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.2)
-        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        tableView.register(UINib(nibName: CustomTableViewCell.className, bundle: nil), forCellReuseIdentifier: CustomTableViewCell.className)
         tableView.refreshControl = refreshControl
+        fetchRoomList()
+        button.rx.tap.subscribe({ _ in
+            self.viewModel.createRoom { roomId in
+                self.navigationController?.loadViewController(identifier: RoomViewController.className) { (controller: UIViewController) -> Void in
+                    (controller as! RoomViewController).roomID = roomId
+                }
+            }
+        }).disposed(by: disposeBag)
+        refreshControl.rx.controlEvent(.valueChanged).subscribe({ _ in
+            self.fetchRoomList()
+        }).disposed(by: disposeBag)
 
-        button.rx.tap
-            .subscribe({ _ in
-                print("tapped!")
-                self.viewModel.createRoom { id in
-                    print(id)
-                    guard let roomViewController = self.storyboard?.instantiateViewController(withIdentifier: "RoomViewController") as? RoomViewController else { return }
-                    roomViewController.roomID = id
-                    self.navigationController?.pushViewController(roomViewController, animated: true)
-                }
-            }).disposed(by: disposeBag)
-        refreshControl.rx
-            .controlEvent(.valueChanged)
-            .subscribe({ _ in
-                print("refresh!")
-                self.viewModel.fetchRoomList {
-                    self.tableView.reloadData()
-                    self.refreshControl.endRefreshing()
-                }
-            }).disposed(by: disposeBag)
+    }
+    func fetchRoomList() {
         self.viewModel.fetchRoomList {
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
@@ -59,9 +46,8 @@ extension RoomListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.className, for: indexPath) as! CustomTableViewCell
         cell.roomInfo = viewModel.rooms[indexPath.row]
         cell.parentViewController = self
         return cell

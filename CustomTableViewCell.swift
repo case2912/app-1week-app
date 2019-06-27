@@ -10,9 +10,7 @@ class CustomTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.backgroundColor = .clear
         button.rx.tap.subscribe({ _ in
-            print("tap in button")
-            print(self.roomInfo!)
-            guard let roomViewController = self.parentViewController.storyboard!.instantiateViewController(withIdentifier: "RoomViewController") as? RoomViewController else {
+            guard let roomViewController = self.parentViewController.storyboard!.instantiateViewController(withIdentifier: RoomViewController.className) as? RoomViewController else {
                 return
             }
             roomViewController.roomID = self.roomInfo
@@ -22,7 +20,6 @@ class CustomTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
 
 }

@@ -4,8 +4,8 @@ import UIKit
 class CustomUIButton :UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        self.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper-red")!)
-        self.titleLabel?.font = UIFont(name: "AoyagiSosekiFont2OTF", size: 24)
+        self.backgroundColor = .primary
+        self.titleLabel?.font = UIFont(name: UIFont.aoyagiSosekiFontString, size: 24)
         self.tintColor = .white
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 1

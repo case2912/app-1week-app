@@ -9,29 +9,19 @@ class RoomViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
-
     @IBOutlet weak var myButton: UIButton!
-
-
     var roomID: String?
     private var viewModel: RoomViewModel!
     private let disposeBag = DisposeBag()
     override func viewWillAppear(_ animated: Bool) {
-        let backButton = UIBarButtonItem(title: "戻る", style: .done, target: self, action: nil)
-        backButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
-            ], for: .normal)
-        backButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "AoyagiSosekiFont2OTF", size: 30)!,
-            ], for: .highlighted)
-        navigationItem.backBarButtonItem = backButton
+        navigationItem.setBackButtonItem()
     }
     override func viewDidLoad() {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "japanese-paper")!)
+        view.backgroundColor = .background
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
-        collectionView.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CustomCollectionViewCell")
+        collectionView.register(UINib(nibName: CustomCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: CustomCollectionViewCell.className)
         guard let url = URL(string: "ws://127.0.0.1:8080/room?id=\(roomID!)") else {
             return
         }
@@ -40,31 +30,17 @@ class RoomViewController: UIViewController {
         viewModel = RoomViewModel(socket)
         viewModel.connect()
         tableView.backgroundColor = .clear
-
         submitButton.rx.tap.subscribe({ _ in
-            print("submit")
-            self.viewModel.message.messageType = MessageType.Comment.rawValue
+            self.viewModel.message = Message(message: self.textField.text ?? "", messageType: MessageType.Comment.rawValue, from: "")
             self.viewModel.sendMessage()
             self.textField.text = ""
         }).disposed(by: disposeBag)
-        textField.rx.text.orEmpty.asObservable().subscribe({ event in
-            print("text field changed")
-            guard let message = event.element else { return }
-            self.viewModel.message.message = message
-        }).disposed(by: disposeBag)
-        textField.rx.controlEvent(.editingDidBegin).subscribe({ _ in
-            print("begin")
-
-        }).disposed(by: disposeBag)
-        textField.rx.controlEvent(.editingDidEnd).subscribe({ _ in
-
-            print("end")
+        textField.rx.text.orEmpty.asObservable().subscribe({ _ in
         }).disposed(by: disposeBag)
         myButton.rx.tap.subscribe({ _ in
-            print("tap my button")
-            guard let modalViewController = self.storyboard?.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController else { return }
-            modalViewController.roomViewModel = self.viewModel
-            self.present(modalViewController, animated: true, completion: nil)
+            self.navigationController?.loadModalViewController(identifier: ModalViewController.className) { controller in
+                (controller as! ModalViewController).roomViewModel = self.viewModel
+            }
         }).disposed(by: disposeBag)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -78,22 +54,18 @@ class RoomViewController: UIViewController {
             return
         }
         UIStackView.animate(withDuration: duration, animations: {
-
             let transform = CGAffineTransform(translationX: 0, y: -(keyboardFrame.size.height) + self.view.safeAreaInsets.bottom)
             self.stackView.transform = transform
         }, completion: nil)
-        print("keyboard show")
     }
     @objc func keyboardWillHide(_ notification: Notification?) {
         guard let duration = notification?.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else {
             return
         }
-
         UIStackView.animate(withDuration: duration, animations: {
             let transform = CGAffineTransform (translationX: 0, y: 0)
             self.stackView.transform = transform
         }, completion: nil)
-        print("keyboard hide")
     }
 }
 
@@ -101,9 +73,8 @@ extension RoomViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.renga.count
     }
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.className, for: indexPath) as! CustomCollectionViewCell
         cell.label.text = (viewModel.renga[indexPath.row]).message
         return cell
     }
@@ -119,9 +90,8 @@ extension RoomViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.messages.count
     }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.className, for: indexPath)
         cell.backgroundColor = .clear
         cell.textLabel?.text = (viewModel.messages[indexPath.row] as Message).message
         guard let image = cell.imageView else { return cell }
@@ -137,18 +107,13 @@ extension RoomViewController: UITextFieldDelegate {
     }
 }
 
+
 extension RoomViewController: WebSocketDelegate {
     func websocketDidConnect(socket: WebSocketClient) {
-        print("didConnect")
     }
-
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        print("didDisconnect")
     }
-
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        print("didReceiveMessage")
-        print(text)
         guard let data = text.data(using: .utf8)else { return }
         do {
             let json = try JSONDecoder().decode(Message.self, from: data)
@@ -166,8 +131,6 @@ extension RoomViewController: WebSocketDelegate {
             print(error)
         }
     }
-
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        print("didReceiveData")
     }
 }

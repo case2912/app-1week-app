@@ -1,5 +1,8 @@
+
 import UIKit
-class CTLabel: UILabel {
+
+class CTUITextField: UITextField {
+
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.saveGState()
@@ -9,7 +12,7 @@ class CTLabel: UILabel {
         context.translateBy(x: 0, y: self.bounds.size.height)
         context.scaleBy(x: 1, y: -1)
         let astr = NSAttributedString(string: self.text ?? "", attributes: [
-            kCTFontAttributeName as NSAttributedString.Key: CTFontCreateWithName("AoyagiSosekiFont2OTF" as CFString, floor(rect.width - 1) as CGFloat, nil),
+            kCTFontAttributeName as NSAttributedString.Key: CTFontCreateWithName(UIFont.aoyagiSosekiFontString as CFString, floor(rect.width - 1) as CGFloat, nil),
             NSAttributedString.Key.verticalGlyphForm: true,
             ])
         let frameSetter = CTFramesetterCreateWithAttributedString(astr)
@@ -21,4 +24,5 @@ class CTLabel: UILabel {
         let frame = CTFramesetterCreateFrame(frameSetter, CFRange(), path, frameAttrs as CFDictionary)
         CTFrameDraw(frame, context)
     }
+
 }

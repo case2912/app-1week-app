@@ -59,33 +59,47 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="Vgr-jN-oXp">
                                 <rect key="frame" x="73" y="671" width="269" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soj-F2-3mW" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="45"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Soj-F2-3mW" secondAttribute="height" multiplier="22:9" id="lsz-cQ-QVH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="はじめる"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2j-f5-s8B" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
-                                        <rect key="frame" x="159" y="0.0" width="110" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="45"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="i2j-f5-s8B" secondAttribute="height" multiplier="22:9" id="wMJ-1z-Qya"/>
                                         </constraints>
                                         <state key="normal" title="りれき"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2S1-xO-Cmb" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="159" y="0.0" width="110" height="45"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2S1-xO-Cmb" secondAttribute="height" multiplier="22:9" id="L4Y-do-NdD"/>
+                                        </constraints>
+                                        <state key="normal" title="設定"/>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="2S1-xO-Cmb" firstAttribute="width" secondItem="2S1-xO-Cmb" secondAttribute="height" multiplier="22:9" id="hgc-a3-W7y"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soj-F2-3mW" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
+                                <rect key="frame" x="137" y="462" width="134" height="61"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Soj-F2-3mW" secondAttribute="height" multiplier="22:9" constant="-15.111111111111114" id="OxV-30-YzR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="はじめる"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sK1-TA-6rG" firstAttribute="centerY" secondItem="pPm-sv-Swk" secondAttribute="centerY" id="3nY-lk-EGF"/>
+                            <constraint firstItem="Soj-F2-3mW" firstAttribute="leading" secondItem="ouz-dE-saQ" secondAttribute="leading" constant="137" id="6Go-XP-1Ka"/>
+                            <constraint firstItem="t1Q-Qd-jQq" firstAttribute="top" secondItem="Soj-F2-3mW" secondAttribute="bottom" constant="25" id="T8C-Bp-r03"/>
                             <constraint firstItem="Vgr-jN-oXp" firstAttribute="leading" secondItem="ouz-dE-saQ" secondAttribute="leading" constant="73" id="VmJ-1E-J4V"/>
                             <constraint firstItem="t1Q-Qd-jQq" firstAttribute="leading" secondItem="ouz-dE-saQ" secondAttribute="leading" constant="28" id="Zle-9I-Nlx"/>
                             <constraint firstItem="ouz-dE-saQ" firstAttribute="trailing" secondItem="Vgr-jN-oXp" secondAttribute="trailing" constant="72" id="lf7-qJ-PMn"/>
                             <constraint firstItem="ouz-dE-saQ" firstAttribute="bottom" secondItem="Vgr-jN-oXp" secondAttribute="bottom" constant="20" id="ny4-x7-okN"/>
+                            <constraint firstItem="ouz-dE-saQ" firstAttribute="trailing" secondItem="Soj-F2-3mW" secondAttribute="trailing" constant="143" id="obp-pH-DaW"/>
                             <constraint firstItem="Vgr-jN-oXp" firstAttribute="top" secondItem="t1Q-Qd-jQq" secondAttribute="bottom" constant="22" id="okr-4t-BB1"/>
                             <constraint firstItem="sK1-TA-6rG" firstAttribute="centerX" secondItem="pPm-sv-Swk" secondAttribute="centerX" id="pCM-Ht-7H2"/>
                             <constraint firstItem="ouz-dE-saQ" firstAttribute="trailing" secondItem="t1Q-Qd-jQq" secondAttribute="trailing" constant="34" id="vYB-Sk-UxP"/>
@@ -223,7 +237,7 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                                             <constraint firstAttribute="width" constant="414" id="NAh-8B-hyC"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" textLabel="vhi-gM-mAa" imageView="4px-9W-MRd" style="IBUITableViewCellStyleDefault" id="Z7I-As-tl4">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UITableViewCell" textLabel="vhi-gM-mAa" imageView="4px-9W-MRd" style="IBUITableViewCellStyleDefault" id="Z7I-As-tl4">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z7I-As-tl4" id="kyg-oU-1FY">
@@ -252,6 +266,7 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpg-ru-wOI" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
                                         <rect key="frame" x="146.66666666666666" y="119" width="120.99999999999997" height="40"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="121" id="Lpa-vD-9Df"/>
                                             <constraint firstAttribute="height" constant="40" id="rRg-tt-lPh"/>
@@ -276,6 +291,7 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZh-DR-LXW" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="0.0" width="74" height="30"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="74" id="5Xp-2k-FpC"/>
                                                     <constraint firstAttribute="height" constant="30" id="8mc-pJ-yK6"/>
