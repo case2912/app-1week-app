@@ -52,6 +52,14 @@ class RoomViewController: UIViewController {
             guard let message = event.element else { return }
             self.viewModel.message.message = message
         }).disposed(by: disposeBag)
+        textField.rx.controlEvent(.editingDidBegin).subscribe({ _ in
+            print("begin")
+
+        }).disposed(by: disposeBag)
+        textField.rx.controlEvent(.editingDidEnd).subscribe({ _ in
+
+            print("end")
+        }).disposed(by: disposeBag)
         myButton.rx.tap.subscribe({ _ in
             print("tap my button")
             guard let modalViewController = self.storyboard?.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController else { return }

@@ -1,6 +1,10 @@
+
 import UIKit
-class CTLabel: UILabel {
+
+class CTUITextField: UITextField {
+
     override func draw(_ rect: CGRect) {
+        print("text field draw!!!!\(self.text)")
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.saveGState()
         defer {
@@ -21,4 +25,5 @@ class CTLabel: UILabel {
         let frame = CTFramesetterCreateFrame(frameSetter, CFRange(), path, frameAttrs as CFDictionary)
         CTFrameDraw(frame, context)
     }
+
 }

@@ -322,58 +322,70 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDa-YI-Kld">
-                                <rect key="frame" x="20" y="84" width="374" height="632"/>
+                                <rect key="frame" x="20" y="28" width="374" height="688"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="さしすせそそそ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-Ms-Ydm" customClass="CTLabel" customModule="ios_example" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="8" width="87" height="468"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwW-Hh-Y6l" customClass="CTUITextField" customModule="ios_example" customModuleProvider="target">
+                                        <rect key="frame" x="139" y="8" width="97" height="634"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="かきくけこ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08j-sM-ltR" customClass="CTLabel" customModule="ios_example" customModuleProvider="target">
-                                        <rect key="frame" x="239" y="8" width="87" height="468"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="たちつてと" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxF-qF-Fx2" customClass="CTLabel" customModule="ios_example" customModuleProvider="target">
-                                        <rect key="frame" x="49" y="8" width="87" height="468"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YS-Pt-CKd" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
-                                        <rect key="frame" x="208" y="594" width="75" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="詠む"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-vV-wp6" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
-                                        <rect key="frame" x="102" y="594" width="75" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="戻る"/>
-                                    </button>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="LnF-FE-r0f">
+                                        <rect key="frame" x="80" y="650" width="214" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-vV-wp6" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="iS1-vV-wp6" secondAttribute="height" multiplier="5:2" id="g4v-bH-QyC"/>
+                                                </constraints>
+                                                <state key="normal" title="戻る"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YS-Pt-CKd" customClass="CustomUIButton" customModule="ios_example" customModuleProvider="target">
+                                                <rect key="frame" x="139" y="0.0" width="75" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7YS-Pt-CKd" secondAttribute="height" multiplier="5:2" id="rIV-BB-uhU"/>
+                                                </constraints>
+                                                <state key="normal" title="詠む"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="LnF-FE-r0f" secondAttribute="height" multiplier="107:15" id="QQ4-PX-wnJ"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="LnF-FE-r0f" secondAttribute="bottom" constant="8" id="7Qe-na-m5T"/>
+                                    <constraint firstItem="EwW-Hh-Y6l" firstAttribute="top" secondItem="RDa-YI-Kld" secondAttribute="top" constant="8" id="8sw-ej-Fme"/>
+                                    <constraint firstItem="LnF-FE-r0f" firstAttribute="leading" secondItem="RDa-YI-Kld" secondAttribute="leading" constant="80" id="8t6-wA-PY2"/>
+                                    <constraint firstItem="EwW-Hh-Y6l" firstAttribute="leading" secondItem="RDa-YI-Kld" secondAttribute="leading" constant="139" id="O8y-Wc-e2A"/>
+                                    <constraint firstAttribute="trailing" secondItem="LnF-FE-r0f" secondAttribute="trailing" constant="80" id="bPH-LE-kTr"/>
+                                    <constraint firstItem="LnF-FE-r0f" firstAttribute="top" secondItem="EwW-Hh-Y6l" secondAttribute="bottom" constant="8" id="fbR-q2-1Ul"/>
+                                    <constraint firstAttribute="trailing" secondItem="EwW-Hh-Y6l" secondAttribute="trailing" constant="138" id="giZ-YL-heX"/>
+                                    <constraint firstItem="EwW-Hh-Y6l" firstAttribute="top" secondItem="RDa-YI-Kld" secondAttribute="top" constant="8" id="jmv-jF-o1D"/>
+                                    <constraint firstItem="EwW-Hh-Y6l" firstAttribute="leading" secondItem="RDa-YI-Kld" secondAttribute="leading" constant="139" id="nI7-6d-ZWh"/>
+                                    <constraint firstAttribute="trailing" secondItem="EwW-Hh-Y6l" secondAttribute="trailing" constant="138" id="y0r-st-uYb"/>
+                                </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RDa-YI-Kld" firstAttribute="top" secondItem="dkZ-Mk-fWU" secondAttribute="top" constant="64" id="1RX-Qn-jHA"/>
+                            <constraint firstItem="RDa-YI-Kld" firstAttribute="top" secondItem="dkZ-Mk-fWU" secondAttribute="top" constant="8" id="1RX-Qn-jHA"/>
                             <constraint firstItem="dkZ-Mk-fWU" firstAttribute="bottom" secondItem="RDa-YI-Kld" secondAttribute="bottom" constant="20" id="hLR-5M-i7H"/>
                             <constraint firstItem="RDa-YI-Kld" firstAttribute="leading" secondItem="dkZ-Mk-fWU" secondAttribute="leading" constant="20" id="s9b-W2-gxn"/>
                             <constraint firstItem="dkZ-Mk-fWU" firstAttribute="trailing" secondItem="RDa-YI-Kld" secondAttribute="trailing" constant="20" id="xEz-Ld-GZ2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dkZ-Mk-fWU"/>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="iS1-vV-wp6" id="uG2-6L-ccx"/>
                         <outlet property="submitButton" destination="7YS-Pt-CKd" id="Xqu-Zb-5ua"/>
+                        <outlet property="textField" destination="EwW-Hh-Y6l" id="9Oh-pg-cl0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yo-Zj-iDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,4 +413,5 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
         <image name="line" width="1074" height="16"/>
         <image name="ramdom_user" width="128" height="128"/>
     </resources>
+    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
