@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIv-wJ-Opb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-249" y="-1139"/>
+            <point key="canvasLocation" x="-1013" y="-385"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="q2x-uR-QGK">
@@ -232,7 +232,7 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-249.27536231884059" y="342.39130434782612"/>
+            <point key="canvasLocation" x="503" y="331"/>
         </scene>
         <!--Room View Controller-->
         <scene sceneID="QgL-mz-WJ4">
@@ -358,7 +358,7 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPa-3A-wcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502.89855072463774" y="341.57608695652175"/>
+            <point key="canvasLocation" x="1235" y="331"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="L65-wC-nYR">
@@ -484,7 +484,7 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yo-Zj-iDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1266.6666666666667" y="341.57608695652175"/>
+            <point key="canvasLocation" x="1932" y="331"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="uks-EC-jrc">
@@ -500,7 +500,7 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX2-e5-Rug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1077" y="-385"/>
+            <point key="canvasLocation" x="-1775" y="-385"/>
         </scene>
     </scenes>
     <resources>
