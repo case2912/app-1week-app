@@ -15,6 +15,34 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Base Load View Controller-->
+        <scene sceneID="ZNd-Ur-j8K">
+            <objects>
+                <viewController id="uZA-yF-Vs3" customClass="BaseLoadViewController" customModule="ios_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3gv-w6-VwL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-fz-cBs">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IzX-fz-cBs" firstAttribute="centerX" secondItem="3gv-w6-VwL" secondAttribute="centerX" id="OMj-tT-GOw"/>
+                            <constraint firstItem="IzX-fz-cBs" firstAttribute="centerY" secondItem="3gv-w6-VwL" secondAttribute="centerY" id="Ut5-5F-brA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vw4-z7-Ufp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SYO-zC-5Ek"/>
+                    <connections>
+                        <outlet property="indicator" destination="IzX-fz-cBs" id="cSb-zi-V3B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mIv-wJ-Opb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="-1139"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="q2x-uR-QGK">
             <objects>
@@ -108,8 +136,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="cEm-1I-85J"/>
                     <connections>
-                        <outlet property="historyButton" destination="i2j-f5-s8B" id="Y3t-bl-bO1"/>
+                        <outlet property="historyButton" destination="i2j-f5-s8B" id="yce-Co-9ha"/>
+                        <outlet property="settingButton" destination="2S1-xO-Cmb" id="a5Z-LU-ISh"/>
                         <outlet property="startButton" destination="Soj-F2-3mW" id="laS-9M-a5o"/>
+                        <outlet property="userImage" destination="Aas-dv-9ib" id="s2a-Hb-N6o"/>
+                        <outlet property="usernameLabel" destination="ReJ-bs-oMh" id="6XW-k1-KbL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riG-B2-NTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,6 +360,53 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
             </objects>
             <point key="canvasLocation" x="502.89855072463774" y="341.57608695652175"/>
         </scene>
+        <!--History View Controller-->
+        <scene sceneID="L65-wC-nYR">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" id="WWF-nN-PQH" customClass="HistoryViewController" customModule="ios_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cPp-jS-GMX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お客様コード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuy-YF-Gev">
+                                <rect key="frame" x="141" y="328" width="132" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vuy-YF-Gev" secondAttribute="height" multiplier="6:1" id="BFu-uw-QAB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="client-uuid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lJ-ND-k68">
+                                <rect key="frame" x="20" y="357" width="374" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6lJ-ND-k68" secondAttribute="height" multiplier="17:1" id="HkG-MO-ulF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AoyagiSosekiFont2OTF" family="AoyagiSosekiFont2OTF" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6lJ-ND-k68" firstAttribute="top" secondItem="vuy-YF-Gev" secondAttribute="bottom" constant="7" id="DqT-4c-EB8"/>
+                            <constraint firstItem="92a-FL-3YX" firstAttribute="trailing" secondItem="6lJ-ND-k68" secondAttribute="trailing" constant="20" id="OSa-gd-PRZ"/>
+                            <constraint firstItem="vuy-YF-Gev" firstAttribute="top" secondItem="92a-FL-3YX" secondAttribute="top" constant="264" id="gpH-aF-Aq3"/>
+                            <constraint firstItem="6lJ-ND-k68" firstAttribute="leading" secondItem="92a-FL-3YX" secondAttribute="leading" constant="20" id="k3t-dZ-K6S"/>
+                            <constraint firstItem="6lJ-ND-k68" firstAttribute="centerX" secondItem="cPp-jS-GMX" secondAttribute="centerX" id="mKk-OB-7pG"/>
+                            <constraint firstItem="vuy-YF-Gev" firstAttribute="centerX" secondItem="6lJ-ND-k68" secondAttribute="centerX" id="r42-1l-mmG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="92a-FL-3YX"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="uuidLabel" destination="6lJ-ND-k68" id="cHW-TH-1xU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QjR-OA-f5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502.89855072463774" y="-385.59782608695656"/>
+        </scene>
         <!--Modal View Controller-->
         <scene sceneID="RlI-qe-wHI">
             <objects>
@@ -417,7 +495,7 @@ gbjmip7jgZfjgabjgY/jgaDjgZXjgYQ
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="rzw-0G-Px9" kind="relationship" relationship="rootViewController" id="Ghi-Bp-JTM"/>
+                        <segue destination="uZA-yF-Vs3" kind="relationship" relationship="rootViewController" id="VEd-Rs-8mN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX2-e5-Rug" userLabel="First Responder" sceneMemberID="firstResponder"/>

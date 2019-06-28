@@ -31,7 +31,7 @@ class RoomViewController: UIViewController {
         viewModel.connect()
         tableView.backgroundColor = .clear
         submitButton.rx.tap.subscribe({ _ in
-            self.viewModel.message = Message(message: self.textField.text ?? "", messageType: MessageType.Comment.rawValue, from: "")
+            self.viewModel.message = Message(message: self.textField.text ?? "", messageType: MessageType.Comment.rawValue, from: User.imageString!)
             self.viewModel.sendMessage()
             self.textField.text = ""
         }).disposed(by: disposeBag)
@@ -97,6 +97,12 @@ extension RoomViewController: UITableViewDelegate, UITableViewDataSource {
         guard let image = cell.imageView else { return cell }
         image.clipsToBounds = true
         image.layer.cornerRadius = image.frame.height / 2
+        print(viewModel.clientImages)
+        if let fromImage = viewModel.clientImages[(viewModel.messages[indexPath.row] as Message).from] {
+            image.image = fromImage
+        } else {
+            image.image = nil
+        }
         return cell
     }
 }
@@ -120,6 +126,10 @@ extension RoomViewController: WebSocketDelegate {
             switch json.messageType {
             case MessageType.Comment.rawValue:
                 viewModel.messages += [json]
+                if let url = URL(string: json.from) {
+                    let data = try Data(contentsOf: url)
+                    viewModel.clientImages[json.from] = UIImage(data: data)
+                }
                 tableView.reloadData()
                 tableView.scrollToRow(at: IndexPath(row: viewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
             case MessageType.Haiku.rawValue:

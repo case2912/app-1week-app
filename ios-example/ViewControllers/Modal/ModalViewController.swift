@@ -18,7 +18,7 @@ class ModalViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }).disposed(by: disposeBag)
         submitButton.rx.tap.subscribe({ _ in
-            self.roomViewModel.message = Message(message: self.textField.text ?? "", messageType: MessageType.Haiku.rawValue, from: "")
+            self.roomViewModel.message = Message(message: self.textField.text ?? "", messageType: MessageType.Haiku.rawValue, from: User.imageString!)
             self.roomViewModel.sendMessage()
             self.dismiss(animated: true, completion: nil)
         }).disposed(by: disposeBag)

@@ -48,3 +48,7 @@ public extension ClassNameProtocol {
 }
 
 extension NSObject: ClassNameProtocol { }
+
+extension UserDefaults {
+    static let clientUUIDString = "client-uuid"
+}

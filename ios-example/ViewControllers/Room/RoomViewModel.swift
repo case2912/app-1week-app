@@ -1,12 +1,12 @@
 import Foundation
 import Starscream
-
+import UIKit
 final class RoomViewModel {
     var message :Message?
     var socket: WebSocket
     var messages: [Message] = []
     var renga: [Message] = []
-
+    var clientImages: [String:UIImage]=[:]
     init(_ socket: WebSocket) {
         self.socket = socket
     }
